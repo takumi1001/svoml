@@ -1,0 +1,88 @@
+body {
+    font-size: 1em;
+}
+
+header {
+    margin: 1em;
+}
+
+span.group {
+    display: inline-block;
+    padding: 0.1em 0.5em;
+    border: solid 1px black;
+    border-radius: 1em;
+    background-color: ghostwhite;
+    margin: 0.3em 0.2em;
+}
+
+span.hidden-group {
+    display: inline-block;
+}
+
+span.subject {
+    background-color: rgb(255, 109, 96);
+    position: relative;
+    margin-bottom: 1em;
+}
+
+span.subject::before {
+    content: "S";
+    position: absolute;
+    font-style: italic;
+    color: rgb(255, 109, 96);
+    top: 1.6em;
+    bottom: 0;
+    right: calc(50% - 0.3em);
+    margin: auto 0;
+}
+
+span.verb {
+    background-color: rgb(247, 208, 96);
+    position: relative;
+    margin-bottom: 1em;
+}
+
+span.verb::before {
+    content: "V";
+    position: absolute;
+    font-style: italic;
+    color: rgb(247, 208, 96);
+    top: 1.6em;
+    bottom: 0;
+    right: calc(50% - 0.3em);
+    margin: auto 0;
+}
+
+span.object {
+    background-color: rgb(243, 233, 159);
+    position: relative;
+    margin-bottom: 1em;
+}
+
+span.object::before {
+    content: "O";
+    position: absolute;
+    font-style: italic;
+    color: rgb(243, 233, 159);
+    top: 1.6em;
+    bottom: 0;
+    right: calc(50% - 0.3em);
+    margin: auto 0;
+}
+
+span.complement {
+    background-color: rgb(152, 216, 170);
+    position: relative;
+    margin-bottom: 1em;
+}
+
+span.complement::before {
+    content: "C";
+    position: absolute;
+    font-style: italic;
+    color: rgb(152, 216, 170);
+    top: 1.6em;
+    bottom: 0;
+    right: calc(50% - 0.3em);
+    margin: auto 0;
+}

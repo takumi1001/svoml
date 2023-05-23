@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="svoml" type="SvomlType" />
+    <xsd:complexType name="SvomlType">
+        <xsd:sequence>
+            <xsd:element name="header" type="xsd:string" />
+            <xsd:element name="body" type="BodyType" />
+            <xsd:element name="arrows" type="ArrowsType" />
+            <xsd:element name="footer" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="BodyType">
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="g" type="GroupType" />
+            <xsd:element name="h" type="GroupType" />
+            <xsd:element name="s" type="GroupType" />
+            <xsd:element name="v" type="GroupType" />
+            <xsd:element name="o" type="GroupType" />
+            <xsd:element name="c" type="GroupType" />
+            <xsd:element name="t" type="xsd:string" />
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:complexType name="GroupType" mixed="true">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            <xsd:element name="g" type="GroupType" />
+            <xsd:element name="h" type="GroupType" />
+            <xsd:element name="s" type="GroupType" />
+            <xsd:element name="v" type="GroupType" />
+            <xsd:element name="o" type="GroupType" />
+            <xsd:element name="c" type="GroupType" />
+        </xsd:choice>
+        <xsd:attribute name="id" type="xsd:string" use="optional"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="ArrowsType">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+            <xsd:element name="di" type="ArrowType" />
+            <xsd:element name="bi" type="ArrowType" />
+            <xsd:element name="li" type="ArrowType" />
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:complexType name="ArrowType">
+        <xsd:attribute name="start" type="xsd:string" use="required"></xsd:attribute>
+        <xsd:attribute name="end" type="xsd:string" use="required"></xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

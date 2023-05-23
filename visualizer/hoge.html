@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link href="svoml.css" rel="stylesheet">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <header>
+      Abst Visualizer Sample
+    </header>
+    <span class="group">
+      <span id="this" class="subject group">This</span>  
+      <span class="verb group">is</span>
+        <span class="complement group">
+            a duck
+        </span>
+      because 
+      <span id="it" class="subject group">it aaaaaaaaaaaaaaaaaaaaa</span>  
+      <span class="verb group">quacks</span>
+      like a duck.
+      aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa
+    </span>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.3/leader-line.min.js" integrity="sha512-aFBNsI3+D6ObLLtyKwdZPZzDbcCC6+Bh+2UNV8HC0R95BpcBT+dmmZ5NMpJi/Ic8uO0W7FGcg33IfuHg+7Ryew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      new LeaderLine(
+          document.getElementById('this'),
+          document.getElementById('it'),
+          {
+            path: "grid",
+            startSocket: 'top',
+            endSocket: 'top',
+            color: 'rgba(30, 130, 250, 0.5)'
+          }      
+          );
+    </script>
+
+  </body>
+</html>
