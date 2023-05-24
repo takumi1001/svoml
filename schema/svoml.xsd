@@ -6,8 +6,8 @@
         <xsd:sequence>
             <xsd:element name="header" type="xsd:string" />
             <xsd:element name="body" type="BodyType" />
-            <xsd:element name="arrows" type="ArrowsType" />
             <xsd:element name="footer" type="xsd:string" />
+            <xsd:element name="arrows" type="ArrowsType" />
         </xsd:sequence>
     </xsd:complexType>
 
@@ -39,7 +39,7 @@
         <xsd:choice maxOccurs="unbounded" minOccurs="0">
             <xsd:element name="di" type="ArrowType" />
             <xsd:element name="bi" type="ArrowType" />
-            <xsd:element name="li" type="ArrowType" />
+            <xsd:element name="un" type="ArrowType" />
         </xsd:choice>
     </xsd:complexType>
 

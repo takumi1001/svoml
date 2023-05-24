@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="xslt/svoml.xsl" type="text/xsl" ?>
+
+<svoml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="schema/svoml.xsd">
+    <header>
+        SVOML Sample file 2
+    </header>
+
+    <body>
+        <t>SVOML is composed from XML Schema and XLS (xml stylesheet). </t>
+        <t>You can see raw SVOML file from "View Source" functions.</t>
+        
+        <h>
+        <g>Words groups are <g>
+            <g>
+                <g>
+                    <g>nestable</g>
+                </g>
+            </g>
+       </g>and</g>  <s>SVOC groups</s> <v>are</v>  <c>available</c>.</h>
+
+        <t>Also, SVOML supoorts drawing arrows from a group to a group.</t>
+        <h>Directed: <g id="sdi">Start</g> <g id="edi">End</g></h>
+        <h>Bidirected: <g id="sbi">Start</g> <g id="ebi">End</g></h>
+        <h>Undirected <g id="sun">Start</g> <g id="eun">End</g></h>
+        
+        <t>
+        For security issues, browsers disabled XLST if the XML file is on your local storage.
+        So, you have to open SVOML files via HTTP.
+        </t>
+        <h>You can use localhost, for example, <g>python -m http.server </g></h>
+    </body>
+
+    <footer>
+        This is a footer.
+    </footer>
+
+    <arrows>
+        <di start="sdi" end="edi"></di>
+        <bi start="sbi" end="ebi"></bi>
+        <un start="sun" end="eun"></un>
+    </arrows>
+</svoml>

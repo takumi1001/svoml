@@ -1,9 +1,21 @@
 body {
     font-size: 1em;
+    margin-left: 1em;
 }
 
 header {
-    margin: 1em;
+    margin: 1em 0em;
+    font-size: 2em;
+}
+
+footer {
+    text-align: end;
+    font-size: small;
+}
+
+p.text {
+    margin-left: 2em;
+    margin-bottom: 2em;
 }
 
 span.group {
@@ -12,11 +24,16 @@ span.group {
     border: solid 1px black;
     border-radius: 1em;
     background-color: ghostwhite;
-    margin: 0.3em 0.2em;
+    margin-left: 0.3em;
+    margin-top: 0.2em;
+    margin-right: 0.3em;
+    margin-bottom: 0.2em;
 }
 
 span.hidden-group {
     display: inline-block;
+    margin-left: 0.3em;
+    margin-bottom: 0.3em;
 }
 
 span.subject {
@@ -54,7 +71,7 @@ span.verb::before {
 }
 
 span.object {
-    background-color: rgb(243, 233, 159);
+    background-color: rgb(159, 243, 239);
     position: relative;
     margin-bottom: 1em;
 }
@@ -63,7 +80,7 @@ span.object::before {
     content: "O";
     position: absolute;
     font-style: italic;
-    color: rgb(243, 233, 159);
+    color:rgb(83, 93, 232);
     top: 1.6em;
     bottom: 0;
     right: calc(50% - 0.3em);
@@ -80,7 +97,7 @@ span.complement::before {
     content: "C";
     position: absolute;
     font-style: italic;
-    color: rgb(152, 216, 170);
+    color: rgb(56, 199, 96);
     top: 1.6em;
     bottom: 0;
     right: calc(50% - 0.3em);
