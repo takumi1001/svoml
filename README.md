@@ -105,3 +105,19 @@ SVOML supoorts drawing arrows from a group to a group. For example:
 ```
 
 `<di>`, `<bi>` and `<un>` have to be in `<arrows>` and have `start` and `end` attrs. The attrs required groups' `id`.
+
+## VSCode recommended settings
+
+**Schema based lint**
+ - Install the [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) extension.
+
+**Tag snipets**
+Select any words and push `Alt + I` and type any SVOML tags ... it is useful!
+ - Enable `editor.emmet.action.wrapWithAbbreviation` shortcuts for example `Alt + i`.
+ - Set `emmet.extensionsPath` as the absolute folder path of `emmet/snipets.json`.
+
+## License and limitation.
+ - Under MIT license.
+ - This is a toy program as we know.
+ - Any issues and PRs are welcomed.
+ - Reboot vscode.
