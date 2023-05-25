@@ -116,9 +116,10 @@ SVOML supoorts drawing arrows from a group to a group. For example:
 Select any words and push `Alt + I` and type any SVOML tags ... it is useful!
  - Enable `editor.emmet.action.wrapWithAbbreviation` shortcuts for example `Alt + i`.
  - Set `emmet.extensionsPath` as the absolute folder path of `emmet/snipets.json`.
+ - Reboot vscode.
 
 ## License and limitation.
  - Under MIT license.
  - This is a toy program as we know.
  - Any issues and PRs are welcomed.
- - Reboot vscode.
+
