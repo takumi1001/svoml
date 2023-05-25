@@ -1,8 +1,9 @@
-# svoml
-
+# SVOML
 SVOML is the sentence pattern markup language based on XML Schema and XSL.
 
-See samples: [sample1](https://takumi1001.github.io/svoml/sample1.xml) [sample2](https://takumi1001.github.io/svoml/sample2.xml)
+![image](https://github.com/takumi1001/svoml/assets/40143183/693c58dd-37f7-4858-81ec-ff33a6000074)
+
+See samples: [sample1.xml](https://takumi1001.github.io/svoml/sample1.xml) [sample2.xml](https://takumi1001.github.io/svoml/sample2.xml)
 
 ## Usage
 
@@ -15,7 +16,6 @@ cd svoml
 ```sh
 code ./yourfile.xml
 ```
-**Note:** you have to create SVOML files in svoml root directory `./` same as sample files.
 
 3. Lanch localhost. 
 ```sh
@@ -25,7 +25,8 @@ python -m http.server
 
 5. Open `http://localhost:8000/yourfile.xml` in your browser.
 
-## Document format
+## Syntax
+**Look the [schema](https://takumi1001.github.io/svoml/schema/svoml.xsd) for getring detailed syntax.**
 
 ### Base Structure
 ```xml
@@ -44,9 +45,63 @@ python -m http.server
     <arrows></arrows>
 </svoml>
 ```
-The tags above is all required. You can start to write svoml by the base structure.
 
-### header, footer
+**Note:**
+ - You have to specify the relative path to `svoml.xsl` at `href` of `xml-stylesheet` (line 2).
+ - You have to specify the relative path to `svoml.xsd` at ``xsi:noNamespaceSchemaLocation`` of `svoml` (line 5).
+ - `<header>`,`<body>`,`<footer>` and `<arrows>` are not optional and they must meet the order.
+
+### `<header>`, `<footer>`: Header and Footer
 Header and footer are free-text (`xsd:string`).
 
-### body
+### `<body>` : How to markup?
+`body` allows only two type element as children:
+
+- `Group` ... English Sentences.
+  - `<g>`,`<h>`,`<s>`,`<v>`,`<o>`,`<c>`
+- `Text` ... Free text such as the translation sentences.
+  - `<t>`
+
+**Note:** All text have to be in `Group` or `Text`.
+
+For example:
+```xml
+<body>
+    <g>I have a pen.</g>
+    <t>私はペンを持っています．</t>
+</body>
+```
+
+### Groups
+![image](https://github.com/takumi1001/svoml/assets/40143183/1a8bb38e-d327-46d0-92be-0ffd1290df52)
+
+All group tags are **nestable** and have `id` attr *optinal*.
+
+ - `<g>` Simple groups.
+   - Simple group.
+ - `<h>` Hidden groups.
+   - This is group, but with no visualize effects. 
+   - Useful for covering full of a sentence or setting any words as targets of `arrows`.
+ - `<s>`,`<v>`,`<o>`,`<c>` Marked groups.
+   - These are groups marked with Subject, Verb, Object or Complement.
+  
+### Arrows
+![image](https://github.com/takumi1001/svoml/assets/40143183/1cafd480-f2e4-4279-a91a-0e74f68495d5)
+
+SVOML supoorts drawing arrows from a group to a group. For example:
+
+```xml
+    <body>
+        <h>Directed: <g id="sdi">Start</g> <g id="edi">End</g></h>
+        <h>Bidirected: <g id="sbi">Start</g> <g id="ebi">End</g></h>
+        <h>Undirected <g id="sun">Start</g> <g id="eun">End</g></h>
+    </body>
+    <footer> ... </footer>
+    <arrows>
+        <di start="sdi" end="edi"></di>
+        <bi start="sbi" end="ebi"></bi>
+        <un start="sun" end="eun"></un>
+    </arrows>
+```
+
+`<di>`, `<bi>` and `<un>` have to be in `<arrows>` and have `start` and `end` attrs. The attrs required groups' `id`.
