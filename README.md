@@ -112,6 +112,7 @@ SVOML supoorts drawing arrows from a group to a group. For example:
  - Install the [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) extension.
 
 **Tag snipets**
+
 Select any words and push `Alt + I` and type any SVOML tags ... it is useful!
  - Enable `editor.emmet.action.wrapWithAbbreviation` shortcuts for example `Alt + i`.
  - Set `emmet.extensionsPath` as the absolute folder path of `emmet/snipets.json`.
