@@ -11,7 +11,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <html lang="en">
             <head>
                 <meta charset="utf-8"></meta>
-                <link href="xslt/svoml.css" rel="stylesheet"> </link>
+                <link href="https://takumi1001.github.io/svoml/xslt/svoml.css" rel="stylesheet"> </link>
                 <title>SVOML XSLT</title>
             </head>
             <body>
