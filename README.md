@@ -26,7 +26,7 @@ python -m http.server
 5. Open `http://localhost:8000/yourfile.xml` in your browser.
 
 ## Syntax
-**Look the [schema](https://takumi1001.github.io/svoml/schema/svoml.xsd) for getring detailed syntax.**
+**Look the [schema](https://takumi1001.github.io/svoml/schema/svoml.xsd) for the detailed syntax.**
 
 ### Base Structure
 ```xml
